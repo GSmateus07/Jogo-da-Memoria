@@ -79,11 +79,8 @@ export default function Game() {
     }
   }, [matchedIndexes]);
 
-  const levelData = levels.find((l) => l.level === level);
-  const columns = Math.min((levelData?.pairs ?? 2) * 2, 6);
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 p-6 text-xl">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 px-4 py-6 text-xl overflow-x-hidden">
       {!started ? (
         <div className="flex flex-col items-center justify-center text-center space-y-6">
           <div className="text-4xl font-bold text-gray-800">Seja Bem-vindo</div>
@@ -97,36 +94,38 @@ export default function Game() {
           </button>
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center space-y-6">
-          <div className="text-4xl font-extrabold text-green-800">
+        <div className="flex flex-col items-center justify-center space-y-6 w-full">
+          <div className="text-4xl font-extrabold text-green-800 text-center">
             Tentativas corretas: {correctAttempts}
           </div>
 
-          <div className="text-2xl font-semibold text-gray-800">Nível {level}</div>
+          <div className="text-2xl font-semibold text-gray-800 text-center">
+            Nível {level}
+          </div>
 
-          <div
-            className="grid gap-4 sm:gap-6"
-            style={{
-                gridTemplateColumns: 'repeat(auto-fit, minmax(5.5rem, 1fr))',
-                width: '100%',
-                maxWidth: '600px',
-            }}
-          >
-            {cards.map((card, index) => {
-              const isFlipped =
-                flippedIndexes.includes(index) || matchedIndexes.includes(index);
-              return (
-                <div
-                  key={index}
-                  onClick={() => handleCardClick(index)}
-                  className={`flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-lg shadow cursor-pointer text-6xl transition-transform duration-300 ${
-                    isFlipped ? 'bg-white text-black' : 'bg-gray-500 text-gray-500'
-                  }`}
-                >
-                  {isFlipped ? card : '❓'}
-                </div>
-              );
-            })}
+          <div className="w-full overflow-x-hidden px-2">
+            <div
+              className="grid gap-3"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fit, minmax(70px, 1fr))',
+                maxWidth: '100%',
+              }}
+            >
+              {cards.map((card, index) => {
+                const isFlipped = flippedIndexes.includes(index) || matchedIndexes.includes(index);
+                return (
+                  <div
+                    key={index}
+                    onClick={() => handleCardClick(index)}
+                    className={`aspect-square w-full flex items-center justify-center rounded-md shadow cursor-pointer text-4xl sm:text-5xl transition-transform duration-300 ${
+                      isFlipped ? 'bg-white text-black' : 'bg-gray-400 text-gray-300'
+                    }`}
+                  >
+                    {isFlipped ? card : '❓'}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}
