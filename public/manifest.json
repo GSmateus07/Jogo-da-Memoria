@@ -1,0 +1,8 @@
+{
+    "start_url": "https://mobile.gomesmateus.grupo-05.distribuidos.ufersa.dev.br",
+    "dir": "auto",
+    "short_name": "Game",
+    "name": "Memory",
+    "theme_color": "#000000",
+    "background_color": "#000000"
+}
