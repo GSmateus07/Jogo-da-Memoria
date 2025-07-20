@@ -2,20 +2,21 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" href="/icons/icon-192x192.png" sizes="192x192" />
+
+    <!-- Viewport e tema -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Tema para barra do navegador -->
     <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <!-- Título do jogo -->
+    <!-- Manifest e ícones -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icons/icon-192x192.png" sizes="192x192" type="image/png" />
+    <link rel="apple-touch-icon" href="/icons/icon-512x512.png" type="image/png" />
+
+    <!-- Título -->
     <title>Jogo da Memória – ODS</title>
 
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="/icons/icon-512x512.png" />
-
-    <!-- Estilo para fallback básico -->
+    <!-- Estilo básico -->
     <style>
       body {
         margin: 0;
@@ -27,6 +28,8 @@
   <body>
     <noscript>Você precisa habilitar o JavaScript para rodar este jogo.</noscript>
     <div id="root"></div>
+
+    <!-- ⚠️ Certifique-se de que o Vite está servindo corretamente este caminho -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
