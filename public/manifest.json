@@ -1,8 +1,23 @@
 {
-    "start_url": "/",
-    "dir": "auto",
-    "short_name": "Game",
-    "name": "Memory",
-    "theme_color": "#000000",
-    "background_color": "#000000"
+  "name": "Memory Game",
+  "short_name": "Game",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "dir": "auto",
+  "orientation": "natural",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
